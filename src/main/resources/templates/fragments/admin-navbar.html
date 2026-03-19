@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<title>admin-navbar</title>
+<nav th:fragment="navbar"
+     class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <div class="container-fluid">
+
+    <a class="navbar-brand text-white" th:href="@{#}">
+     Admin
+    </a>
+
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        
+ <li class="nav-item">
+          <a class="nav-link text-white" th:href="@{/admin/user-data}">
+         User-Data
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" th:href="@{/admin/productList}">
+            Products
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" th:href="@{/admin/add_product}">
+            Add Product
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" th:href="@{/admin/Admin-My-order}">
+            Order
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" th:href="@{/admin/Contact-Data}">
+           Contact-Data
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-danger" th:href="@{/logout}">
+            Logout
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+</body>
+</html>

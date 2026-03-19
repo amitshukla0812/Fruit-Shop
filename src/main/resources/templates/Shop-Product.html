@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>Shop-Product</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<!-- animate css -->
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="assets/css/meanmenu.min.css">
+	<!-- main style -->
+	<link rel="stylesheet" href="assets/css/main.css">
+	<!-- responsive -->
+	<link rel="stylesheet" href="assets/css/responsive.css">
+
+</head>
+<body>
+	
+
+	
+	
+	<!-- header -->
+	
+	<div class="top-header-area" id="sticker">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="/">
+								<img src="assets/img/logo.png" alt="">
+							</a>
+						</div>
+						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								<li class="current-list-item"><a href="/">Home</a>
+									
+								</li>
+								<li><a href="about">About</a></li>
+								<!--<li><a href="#">Pages</a>
+									<ul class="sub-menu">
+										
+										<li><a href="about">About</a></li>
+										<li><a href="Add-Cart">Cart</a></li>
+										<li><a href="checkout">Check Out</a></li>
+										<li><a href="contact">Contact</a></li>
+										<li><a href="news">News</a></li>
+										<li><a href="shop.html">Shop</a></li>
+									</ul>-->
+								</li>
+								<li><a href="news">News</a>
+									
+								</li>
+								<li><a href="contact">Contact</a></li>
+								<li><a href="Shop-Product">Shop</a>
+								<!--  	<ul class="sub-menu">
+										<li><a href="shop">Shop</a></li>
+										<li><a href="checkout">Check Out</a></li>
+										<li><a href="single-product">Single Product</a></li>
+										<li><a href="Add-Cart">Cart</a></li>
+									</ul>-->
+								</li>
+							
+									<li><a href="login">Login</a></li>
+										<li><a href="register">Register</a></li>
+								<li>
+									
+								</li>
+							
+							</ul>
+						</nav>
+						
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+
+	
+	<!-- end search arewa -->
+	
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Fresh and Organic</p>
+						<h1>Shop</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<!-- products -->
+<!--  <div class="container text-center  ">
+    <h2>Products</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="p : ${products}">
+                <td th:text="${p.id}"></td>
+                <td th:text="${p.name}"></td>
+                <td th:text="${p.price}"></td>
+                <td th:text="${p.description}"></td>
+
+                <td>
+                    <img th:src="@{'/imageFile/' + ${p.imageFile}}"
+                         width="250" height="150" />
+                </td>
+
+                <td>
+                    <a th:href="@{/cart/add/{id}(id=${p.id})}"
+                       class="btn btn-success btn-sm">
+                        Add to Cart
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>-->
+
+	<!-- end products -->
+	<div class="container my-5">
+    <div class="row g-4">
+        <div class="col-md-4 col-sm-6" th:each="p : ${products}">
+            <div class="card h-200">
+                <img th:src="@{'/imageFile/' + ${p.imageFile}}"
+                     class="card"
+                     style="height:220px; width:100%; object-fit:contain;">
+
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 th:text="${p.name}"></h5>
+                    <p th:text="${p.description}"></p>
+
+                    <p class="fw-bold mt-auto">
+                        ₹ <span th:text="${p.price}"></span>
+                    </p>
+
+       <!--              <a th:href="@{/cart/add/{id}(id=${p.id})}"
+                          class="p-3" style="
+    background-color: #F28123;
+     color: #051922;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 15px;
+    border: none !important;
+    cursor: pointer;
+    padding: 15px 25px;
+    border-radius: 3px;">
+                        Add to Cart
+                    </a> -->  
+                    
+                    
+                    
+                        <a th:href="@{/login}"
+                          class="p-3" style="
+    background-color: #F28123;
+     color: #051922;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 15px;
+    border: none !important;
+    cursor: pointer;
+    padding: 15px 25px;
+    border-radius: 3px;">
+                        Add to Cart
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+		
+	
+	
+	
+->
+
+	<!-- footer -->
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box about-widget">
+						<h2 class="widget-title">About us</h2>
+						<p>Welcome to Fresh Fruit Store, where freshness meets quality.
+We believe that healthy living starts with healthy eating, and that’s why we bring you the freshest, juiciest, and finest quality fruits directly from trusted farms..</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box get-in-touch">
+						<h2 class="widget-title">Get in Touch</h2>
+						<ul>
+							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
+							<li>support@fruitkha.com</li>
+							<li>+00 111 222 3333</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box pages">
+						<h2 class="widget-title">Pages</h2>
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="about">About</a></li>
+							<li><a href="Shop-Product">Shop</a></li>
+							<li><a href="news">News</a></li>
+							<li><a href="contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box subscribe">
+						<h2 class="widget-title">Follow Us</h2>
+						<ul>
+							<li><a href="https://www.facebook.com/" ><i class="fab fa-facebook-f"></i> Facebook</a></li>
+							<li><a href="https://x.com/" target="_blank"><i class="fab fa-twitter"> Twitter</i></a></li>
+							<li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"> Instagram</i></a></li>
+							<li><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a></li>
+						
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end footer -->
+	
+	<!-- copyright -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 text-center">
+	<p> Fruit Shop &copy; <script>document.write(new Date().getFullYear());</script>  All Rights Reserved.</p>
+						
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- end copyright -->
+	
+	
+	<!-- jquery -->
+	<script src="assets/js/jquery-1.11.3.min.js"></script>
+	<!-- bootstrap -->
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<!-- count down -->
+	<script src="assets/js/jquery.countdown.js"></script>
+	<!-- isotope -->
+	<script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<!-- waypoints -->
+	<script src="assets/js/waypoints.js"></script>
+	<!-- owl carousel -->
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<!-- magnific popup -->
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<!-- mean menu -->
+	<script src="assets/js/jquery.meanmenu.min.js"></script>
+	<!-- sticker js -->
+	<script src="assets/js/sticker.js"></script>
+	<!-- main js -->
+	<script src="assets/js/main.js"></script>
+
+</body>
+</html>
